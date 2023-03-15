@@ -14,7 +14,7 @@ def get_startnext_amount():
 
     result = soup.find(id='cf-app-funding-numbers-counter')
 
-    amount = int(result.find('span').get_text()[ :-2 ])
+    amount = float(result.find('span').get_text()[ :-2 ].replace('.', ''))
 
     return amount
 
