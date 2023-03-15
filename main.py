@@ -7,4 +7,7 @@ while True:
     newvalue = get_startnext_amount()
     if newvalue != startvalue:
         send_message(f'Betrag ist jetzt {newvalue} €')
+    print(f'Start value: {startvalue} €')
+    print(f'Current value: {newvalue} €')
+    startvalue = newvalue
     sleep(30)
