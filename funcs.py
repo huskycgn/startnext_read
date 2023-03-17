@@ -21,3 +21,5 @@ def get_startnext_amount():
 def send_message(message):
     bot = telebot.TeleBot(token=cred.TOKEN)
     bot.send_message(chat_id=cred.CHAT_ID, text=message)
+    
+# send_message('Betrag ist jetzt 2.210 €')
