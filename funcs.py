@@ -26,13 +26,14 @@ def send_message(message):
 
 def run_program():
     startvalue = get_startnext_amount()
-    newvalue = get_startnext_amount()
-    if newvalue != startvalue:
-        send_message(f'Betrag ist jetzt {newvalue} €')
-        # print(f'Betrag ist jetzt {newvalue} €')
-    print(datetime.now())
-    print(f'Start value: {startvalue} €')
-    print(f'Current value: {newvalue} €')
-    startvalue = newvalue
+    while True:
+        newvalue = get_startnext_amount()
+        if newvalue != startvalue:
+            send_message(f'Betrag ist jetzt {newvalue} €')
+            # print(f'Betrag ist jetzt {newvalue} €')
+        print(datetime.now())
+        print(f'Start value: {startvalue} €')
+        print(f'Current value: {newvalue} €')
+        startvalue = newvalue
 
-# end_message('Betrag ist jetzt 5.175 €')
+# send_message('Betrag ist jetzt 5.207 €')
