@@ -1,16 +1,11 @@
-from funcs import get_startnext_amount, send_message
+from funcs import get_startnext_amount, send_message, run_program
 from time import sleep
 from datetime import datetime
 
-startvalue = get_startnext_amount()
 # print(startvalue)
 while True:
-    newvalue = get_startnext_amount()
-    if newvalue != startvalue:
-        send_message(f'Betrag ist jetzt {newvalue} €')
-        # print(f'Betrag ist jetzt {newvalue} €')
-    print(datetime.now())
-    print(f'Start value: {startvalue} €')
-    print(f'Current value: {newvalue} €')
-    startvalue = newvalue
-    sleep(30)
+    try:
+        run_program()
+        sleep(30)
+    except AttributeError:
+        continue

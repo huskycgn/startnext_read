@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import cred
 import telebot
+from datetime import datetime
 
 
 def get_startnext_amount():
@@ -21,5 +22,17 @@ def get_startnext_amount():
 def send_message(message):
     bot = telebot.TeleBot(token=cred.TOKEN)
     bot.send_message(chat_id=cred.CHAT_ID, text=message)
-    
-# send_message('Betrag ist jetzt 2.210 €')
+
+
+def run_program():
+    startvalue = get_startnext_amount()
+    newvalue = get_startnext_amount()
+    if newvalue != startvalue:
+        send_message(f'Betrag ist jetzt {newvalue} €')
+        # print(f'Betrag ist jetzt {newvalue} €')
+    print(datetime.now())
+    print(f'Start value: {startvalue} €')
+    print(f'Current value: {newvalue} €')
+    startvalue = newvalue
+
+# end_message('Betrag ist jetzt 5.175 €')
