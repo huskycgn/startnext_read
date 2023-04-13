@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import cred
 import telebot
 from datetime import datetime
+from time import sleep
 
 
 def get_startnext_amount():
@@ -35,5 +36,6 @@ def run_program():
         print(f'Start value: {startvalue} €')
         print(f'Current value: {newvalue} €')
         startvalue = newvalue
+        sleep(30)
 
 # send_message('Betrag ist jetzt 5.207 €')
