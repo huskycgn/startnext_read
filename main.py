@@ -1,4 +1,4 @@
-from funcs import get_startnext_amount, send_message, run_program
+from funcs import run_program
 
 # print(startvalue)
 while True:
